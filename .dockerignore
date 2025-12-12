@@ -1,0 +1,26 @@
+# Ignore local environment files
+.env
+.env.local
+
+# Node modules (if exist)
+node_modules/
+
+# Foundry build artifacts
+out/
+cache/
+
+# Git metadata
+.git/
+.gitignore
+
+# VSCode settings
+.vscode/
+
+# OS / Editor files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Test broadcast logs (Foundry)
+broadcast/
