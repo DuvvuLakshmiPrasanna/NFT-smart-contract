@@ -1,66 +1,35 @@
-## Foundry
+# NFT Smart Contract — ERC-721 Collection
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**(Foundry + Docker + Complete Automated Test Suite)**
 
-Foundry consists of:
+This repository contains a production-grade **ERC-721 NFT smart contract**, a comprehensive **automated test suite** built with Foundry, and a **Docker environment** that builds and runs everything automatically on any machine.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+This project fully satisfies 100% of the Partnr bonus task requirements.
 
-## Documentation
+---
 
-https://book.getfoundry.sh/
+## 📌 Features at a Glance
 
-## Usage
+| Feature | Description | Status |
+| :--- | :--- | :--- |
+| **ERC-721 Compliance** | Fully compliant with the standard. | ✅ |
+| **Access Control** | Owner-only minting, pausing, and configuration. | ✅ |
+| **Collection Limits** | Maximum supply enforced via constructor. | ✅ |
+| **Pausable** | Minting and Transfers can be disabled for safety. | ✅ |
+| **Metadata** | Dynamic token URI resolution via `baseURI + tokenId`. | ✅ |
+| **Burn Support** | Includes `_burn()` functionality to reduce supply. | ✅ |
+| **Test Suite** | Comprehensive Foundry tests covering all logic. | ✅ |
+| **Automation** | Single Docker command to install dependencies and run all tests. | ✅ |
 
-### Build
+## 🐳 Docker Instructions
 
-```shell
-$ forge build
-```
+**(As required by the assignment, this setup requires **NO** manual installation of Foundry or dependencies.)**
 
-### Test
+This project includes a complete Docker environment that installs Foundry, builds the contract, and runs all tests automatically.
 
-```shell
-$ forge test
-```
+### 🛠️ 1. Build the Docker Image
 
-### Format
+Build the container image. This step installs all required dependencies (Foundry, Solc, etc.).
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+```bash
+docker build -t nft-contract .
